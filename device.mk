@@ -10,11 +10,9 @@ TARGET_IS_VAB := true
 # No vibrator motor on enuma
 TARGET_DISABLE_VIBRATOR := true
 
-# Signing keys (custom, not test-keys)
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/xiaomi/enuma/signing/releasekey
-PRODUCT_OTA_PUBLIC_KEYS := vendor/xiaomi/enuma/signing/releasekey
-PRODUCT_MAINLINE_SEPOLICY_DEV_CERTIFICATES := vendor/xiaomi/enuma/signing
-PRODUCT_MAINLINE_BLUETOOTH_SEPOLICY_DEV_CERTIFICATES := vendor/xiaomi/enuma/signing
+# Signing keys: AOSP test keys (LineageOS UNOFFICIAL standard).
+# Upstream (davydes) used custom keys at vendor/xiaomi/enuma/signing which are
+# not distributable; override via PRODUCT_DEFAULT_DEV_CERTIFICATE if needed.
 
 
 # Is tablet (false because enuma has cellular modem)
