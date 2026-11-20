@@ -6,6 +6,9 @@
 # A/B
 TARGET_IS_VAB := true
 
+# Is tablet (false because enuma has cellular modem)
+TARGET_IS_TABLET := false
+
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
 
