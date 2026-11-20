@@ -1,0 +1,2 @@
+type padsettings_app, domain, coredomain;
+typeattribute padsettings_app mlstrustedsubject;
