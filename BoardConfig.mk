@@ -22,7 +22,12 @@ TARGET_KERNEL_CONFIG += vendor/xiaomi/enuma.config
 TARGET_OTA_ASSERT_DEVICE := enuma
 
 # Properties
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Wi-Fi
+SOONG_CONFIG_XIAOMI_KONA_WIFI_SYMLINK_VERSION := v2
 
 # Recovery (QTI DRM backend for dual DSI CPHY display)
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
