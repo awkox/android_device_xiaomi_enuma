@@ -1,6 +1,6 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# SPDX-FileCopyrightText: 2024 The LineageOS Project
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -71,7 +71,7 @@ namespace_imports = [
 ]
 
 module = ExtractUtilsModule(
-    'alioth',
+    'enuma',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
