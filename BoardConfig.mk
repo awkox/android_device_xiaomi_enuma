@@ -25,6 +25,9 @@ TARGET_OTA_ASSERT_DEVICE := enuma
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+# Override sm8250-common vendor_phone.prop (single SIM instead of DSDS)
+TARGET_VENDOR_PROP := $(filter-out device/xiaomi/sm8250-common/vendor_phone.prop,$(TARGET_VENDOR_PROP))
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor_phone.prop
 
 # Wi-Fi
 SOONG_CONFIG_XIAOMI_KONA_WIFI_SYMLINK_VERSION := v2
