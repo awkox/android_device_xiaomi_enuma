@@ -21,6 +21,7 @@ TARGET_KERNEL_CONFIG += vendor/xiaomi/enuma.config
 TARGET_OTA_ASSERT_DEVICE := enuma
 
 # Properties
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery (QTI DRM backend for dual DSI CPHY display)
