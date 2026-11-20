@@ -46,6 +46,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi_enuma.peripherals@1.0-service.default
 
+$(call soong_config_set_bool, xiaomi_enuma_peripherals, stylus_use_old_driver, true)
+
+# Stylus button bridge (BLE keyboard -> BTN_STYLUS via uinput)
+PRODUCT_PACKAGES += \
+    stylus-bridge
+
+# DSP Volume Synchronizer (syncs Android volume to Xiaomi DSP/Dolby)
+PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer
+
 # RRO Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlayDevice \

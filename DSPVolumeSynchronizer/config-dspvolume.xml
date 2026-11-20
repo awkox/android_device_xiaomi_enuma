@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<config>
+    <allow-in-power-save package="org.lineageos.dspvolume.xiaomi" />
+    <hidden-api-whitelisted-app package="org.lineageos.dspvolume.xiaomi" />
+</config>
