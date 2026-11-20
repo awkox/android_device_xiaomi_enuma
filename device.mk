@@ -37,10 +37,9 @@ TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
 # Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
-
 PRODUCT_PACKAGES += \
+    libMegviiFacepp-0.5.2 \
+    libmegface \
     libpiex_shim
 
 # Fingerprint
