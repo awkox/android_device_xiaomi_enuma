@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "LineageSettingsOverlayDevice",
-    vendor: true,
+    name: "SettingsProviderOverlayDevice",
+    product_specific: true,
 }

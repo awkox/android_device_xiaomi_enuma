@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "LineageDialerOverlayDevice",
-    vendor: true,
+    name: "LineageSDKOverlayDevice",
+    product_specific: true,
 }

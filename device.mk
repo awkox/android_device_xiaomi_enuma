@@ -39,13 +39,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libpiex_shim
 
-# Overlays
+# RRO Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlayDevice \
     FrameworkResOverlayDevice \
-    LineageDialerOverlayDevice \
-    LineageSettingsOverlayDevice \
-    LineageSystemUIOverlayDevice \
+    LineageSDKOverlayDevice \
+    SettingsOverlayDevice \
+    SettingsProviderOverlayDevice \
     SystemUIOverlayDevice
 
 # Shipping API level
