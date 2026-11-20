@@ -7,11 +7,21 @@
 # A/B
 TARGET_IS_VAB := true
 
+# No vibrator motor on enuma
+TARGET_DISABLE_VIBRATOR := true
+
 # Is tablet (false because enuma has cellular modem)
 TARGET_IS_TABLET := false
 
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
+
+# No NFC on enuma
+PRODUCT_PACKAGES_REMOVE += NfcNci
+
+# No vibrator motor on enuma
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/unavailable-features.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavailable-features.xml
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -32,6 +42,14 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libpiex_shim
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.fx.tunnel@1.0.vendor
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor
 
 # Overlays
 PRODUCT_PACKAGES += \
