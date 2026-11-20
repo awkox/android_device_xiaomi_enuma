@@ -51,14 +51,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor
 
-# Overlays
+# RRO Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayDevice \
-    FrameworkResOverlayDevice \
-    LineageDialerOverlayDevice \
-    LineageSettingsOverlayDevice \
-    LineageSystemUIOverlayDevice \
-    SystemUIOverlayDevice
+    ApertureOverlayEnuma \
+    FrameworkResOverlayEnuma \
+    LineageSDKOverlayEnuma \
+    NetworkStackOverlayMIUI \
+    SettingsOverlayEnuma \
+    SettingsProviderOverlayEnuma \
+    SystemUIOverlayEnuma
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
