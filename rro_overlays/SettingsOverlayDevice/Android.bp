@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "LineageSystemUIOverlayDevice",
-    vendor: true,
+    name: "SettingsOverlayDevice",
+    product_specific: true,
 }
