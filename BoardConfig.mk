@@ -24,6 +24,10 @@ TARGET_OTA_ASSERT_DEVICE := enuma
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/interfaces/peripherals/1.0/default/device_framework_matrix.xml
+
 # Recovery (QTI DRM backend for dual DSI CPHY display)
 $(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
 
