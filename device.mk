@@ -51,6 +51,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor
 
+# Parts
+PRODUCT_PACKAGES += \
+    MiPadParts
+
+PRODUCT_PACKAGES += \
+    vendor.xiaomi_enuma.peripherals@1.0-service.default
+
 # RRO Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlayEnuma \

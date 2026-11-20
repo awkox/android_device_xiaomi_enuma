@@ -29,6 +29,10 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_VENDOR_PROP := $(filter-out device/xiaomi/sm8250-common/vendor_phone.prop,$(TARGET_VENDOR_PROP))
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor_phone.prop
 
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/interfaces/peripherals/1.0/default/device_framework_matrix.xml
+
 # Wi-Fi
 SOONG_CONFIG_XIAOMI_KONA_WIFI_SYMLINK_VERSION := v2
 
