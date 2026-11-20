@@ -1,0 +1,4 @@
+# Stylus button mode, set by padsettings_app and read by stylus-bridge (vendor).
+# system_restricted_prop keeps it out of core_property_type, so the vendor
+# stylus-bridge domain is allowed to read it by AOSP's property neverallows.
+system_restricted_prop(stylus_button_mode_prop)

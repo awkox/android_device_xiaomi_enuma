@@ -1,0 +1,2 @@
+# Stylus button mode (overrides the generic persist.sys. prefix)
+persist.sys.stylus.                     u:object_r:stylus_button_mode_prop:s0
