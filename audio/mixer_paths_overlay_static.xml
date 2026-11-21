@@ -310,7 +310,6 @@
     <ctl name="Ultrasound Microphone Index" value="0"/>
     <ctl name="Ultrasound Suspend" value="0"/>
 
-
     <path name="deep-buffer-playback">
         <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia1" value="1" />
     </path>
@@ -1056,7 +1055,6 @@
         <ctl name="TERT_TDM_RX_1 Channels" value="One" />
         <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
     </path>
-
 
     <path name="ultrasound-output">
         <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />

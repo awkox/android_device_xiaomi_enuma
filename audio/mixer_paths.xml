@@ -3573,7 +3573,6 @@
         <path name="handset" />
     </path>
 
-
     <path name="voice-tty-hco-handset-hdk">
         <ctl name="TTY Mode" value="HCO" />
         <path name="handset" />

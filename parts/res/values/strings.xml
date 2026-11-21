@@ -47,8 +47,6 @@
     <string name="stylus_hardware_version_1">Xiaomi Smart Pen (gen 1)</string>
     <string name="stylus_hardware_version_2">Xiaomi Smart Pen (gen 2)</string>
 
-    <!-- USB Host -->
-
     <!-- Summary -->
     <string name="summary_enabled">Enabled</string>
     <string name="summary_disabled">Disabled</string>

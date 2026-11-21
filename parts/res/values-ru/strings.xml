@@ -29,8 +29,6 @@
     <string name="stylus_hardware_version_1">Xiaomi Smart Pen (1-е поколение)</string>
     <string name="stylus_hardware_version_2">Xiaomi Smart Pen (2-е поколение)</string>
 
-    <!-- USB Host -->
-
     <!-- Summary -->
     <string name="summary_enabled">Включено</string>
     <string name="summary_disabled">Отключено</string>

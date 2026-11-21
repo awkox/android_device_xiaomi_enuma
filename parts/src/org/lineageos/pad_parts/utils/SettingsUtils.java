@@ -48,15 +48,13 @@ public final class SettingsUtils {
 
     public static boolean isValidSwitchKey(String key) {
         return KEYBOARD_ENABLE.equals(key)
-                || COMPATIBLE_STYLUS_ENABLE.equals(key)
-                ;
+                || COMPATIBLE_STYLUS_ENABLE.equals(key);
     }
 
     public static boolean isSettingEnabled(Context context, String prefKey) {
         if (context == null || !isValidSwitchKey(prefKey)) {
             return false;
         }
-
 
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(prefKey, false);
@@ -67,7 +65,6 @@ public final class SettingsUtils {
         if (context == null || !isValidSwitchKey(prefKey)) {
             return;
         }
-
 
         PreferenceManager.getDefaultSharedPreferences(context)
                 .edit().putBoolean(prefKey, enabled).commit();
