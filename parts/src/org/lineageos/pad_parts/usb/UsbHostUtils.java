@@ -24,19 +24,24 @@ public class UsbHostUtils {
     }
 
     /**
-     * Reads the dwc3 controller's mode node, which reports peripheral when
-     * VBUS is active, host when ID is grounded and none otherwise. That is
-     * the state init's property triggers act on, so it is what the settings
-     * UI has to show.
+     * Reads the dwc3 mode node, which reports "peripheral" when VBUS is
+     * active, "host" when ID is grounded and "none" otherwise. That is the
+     * live controller state, so it is what the settings UI has to show.
+     *
+     * @return the mode value, or an empty string when it cannot be read
      */
-    public static boolean isHostModeActive() {
+    public static String getMode() {
         try (java.io.BufferedReader reader =
                 new java.io.BufferedReader(new java.io.FileReader(MODE_PATH))) {
             String state = reader.readLine();
-            return state != null && "host".equals(state.trim());
+            return state != null ? state.trim() : "";
         } catch (Exception e) {
             Log.e(TAG, "Cannot read USB mode", e);
-            return false;
+            return "";
         }
+    }
+
+    public static boolean isHostModeActive() {
+        return "host".equals(getMode());
     }
 }
