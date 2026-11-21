@@ -5,13 +5,22 @@
 
 package org.lineageos.pad_parts.keyboard;
 
-import android.app.Activity;
 import android.os.Bundle;
 
-public class KeyboardSettingsActivity extends Activity {
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+
+public class KeyboardSettingsActivity extends CollapsingToolbarBaseActivity {
+
+    private static final String TAG_KEYBOARD = "keyboard";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        finish();
+
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction().replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    new KeyboardSettingsFragment(), TAG_KEYBOARD).commit();
+        }
     }
 }

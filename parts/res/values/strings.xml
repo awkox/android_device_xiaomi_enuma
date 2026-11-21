@@ -15,6 +15,9 @@
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">Xiaomi Keyboard</string>
+    <string name="keyboard_enable_title">Enable keyboard</string>
+    <string name="keyboard_connected">Connected</string>
+    <string name="keyboard_disconnected">Not connected</string>
 
     <!-- Stylus -->
     <string name="stylus_hardware_version_title">Hardware version</string>
