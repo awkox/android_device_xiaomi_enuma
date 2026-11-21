@@ -160,7 +160,7 @@
     <item name="wifi.controller.idle">1</item>
     <item name="wifi.controller.rx">147</item>
     <item name="wifi.controller.tx">138</item>
-    <array name="wifi.controller.tx_levels">1 
+    <array name="wifi.controller.tx_levels">1
     </array>
     <item name="wifi.controller.voltage">3700</item>
     <array name="wifi.batchedscan">

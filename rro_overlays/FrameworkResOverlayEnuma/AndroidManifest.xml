@@ -11,13 +11,11 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.framework_res.overlay.enuma"
-    android:versionCode="1"
-    android:versionName="1.0">
+    package="android.framework_res.overlay.enuma">
 
-    <application android:hasCode="false" />
     <overlay
-        android:targetPackage="android"
         android:isStatic="true"
-        android:priority="1"/>
+        android:priority="1"
+        android:targetPackage="android" />
+
 </manifest>

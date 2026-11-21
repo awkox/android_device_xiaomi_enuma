@@ -1,9 +1,9 @@
 //
-// Copyright (C)  The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
 runtime_resource_overlay {
     name: "NetworkStackOverlayMIUI",
-    product_specific: true
+    product_specific: true,
 }

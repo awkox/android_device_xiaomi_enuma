@@ -11,13 +11,11 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.systemui.overlay.enuma"
-    android:versionCode="1"
-    android:versionName="1.0">
+    package="com.android.systemui.overlay.enuma">
 
-    <application android:hasCode="false" />
     <overlay
-        android:targetPackage="com.android.systemui"
         android:isStatic="true"
-        android:priority="1"/>
+        android:priority="1"
+        android:targetPackage="com.android.systemui" />
+
 </manifest>
