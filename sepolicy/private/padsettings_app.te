@@ -1,6 +1,5 @@
 app_domain(padsettings_app)
 
-set_prop(padsettings_app, usb_host_mode_prop)
 set_prop(padsettings_app, stylus_button_mode_prop)
 
 # Allow padsettings_app to find *_service

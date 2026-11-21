@@ -48,11 +48,6 @@
     <string name="stylus_hardware_version_2">Xiaomi Smart Pen (gen 2)</string>
 
     <!-- USB Host -->
-    <string name="usb_host_title">USB Host Mode (OTG)</string>
-    <string name="usb_host_enable_title">Enable host mode</string>
-    <string name="usb_host_mode_host">Host mode active</string>
-    <string name="usb_host_mode_peripheral">Connected to a computer</string>
-    <string name="usb_host_mode_none">Idle</string>
 
     <!-- Summary -->
     <string name="summary_enabled">Enabled</string>

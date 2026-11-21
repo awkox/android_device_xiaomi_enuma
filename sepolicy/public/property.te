@@ -2,7 +2,3 @@
 # system_restricted_prop keeps it out of core_property_type, so the vendor
 # stylus-bridge domain is allowed to read it by AOSP's property neverallows.
 system_restricted_prop(stylus_button_mode_prop)
-# USB host mode toggle, set and read by padsettings_app.
-# Same class as stylus_button_mode_prop: a persist.sys property the
-# device app owns, kept out of the blanket system_prop grant.
-system_restricted_prop(usb_host_mode_prop)

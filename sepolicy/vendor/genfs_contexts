@@ -30,5 +30,3 @@ genfscon sysfs /devices/platform/soc/soc:xiaomi_keyboard/xiaomi_keyboard_conn_st
 genfscon proc /sys/vm/vfs_cache_pressure            u:object_r:proc_drop_caches:s0
 genfscon proc /sys/vm/dirty_ratio                   u:object_r:proc_dirty:s0
 genfscon proc /sys/kernel/sched_migration_cost_ns   u:object_r:proc_sched:s0
-# USB host mode
-genfscon sysfs /devices/platform/soc/a800000.ssusb/mode                   u:object_r:sysfs_usb_mode:s0

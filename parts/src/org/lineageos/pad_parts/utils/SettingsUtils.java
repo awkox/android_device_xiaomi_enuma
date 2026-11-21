@@ -27,7 +27,6 @@ import java.util.Map;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
 import org.lineageos.pad_parts.stylus.StylusUtils;
-import org.lineageos.pad_parts.usb.UsbHostUtils;
 
 import static com.android.settingslib.drawer.SwitchesProvider.METHOD_GET_DYNAMIC_SUMMARY;
 // import static com.android.settingslib.drawer.SwitchesProvider.METHOD_IS_CHECKED;
@@ -41,7 +40,6 @@ public final class SettingsUtils {
 
     public static final String KEYBOARD_ENABLE = "keyboard_enable";
     public static final String COMPATIBLE_STYLUS_ENABLE = "compatible_stylus_enable";
-    public static final String USB_HOST_ENABLE = "usb_host_enable";
 
     public static final Uri SETTINGS_AUTHORITY_URI =
             Uri.parse("content://org.lineageos.pad_parts.settings");
@@ -51,7 +49,7 @@ public final class SettingsUtils {
     public static boolean isValidSwitchKey(String key) {
         return KEYBOARD_ENABLE.equals(key)
                 || COMPATIBLE_STYLUS_ENABLE.equals(key)
-                || USB_HOST_ENABLE.equals(key);
+                ;
     }
 
     public static boolean isSettingEnabled(Context context, String prefKey) {
@@ -59,13 +57,6 @@ public final class SettingsUtils {
             return false;
         }
 
-        if (USB_HOST_ENABLE.equals(prefKey)) {
-            // The dwc3 mode node is the live controller state init acts on.
-            // The property is only the signal the init triggers consume, so
-            // a default there could claim host mode the hardware never
-            // entered.
-            return UsbHostUtils.isHostModeActive();
-        }
 
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(prefKey, false);
@@ -77,12 +68,6 @@ public final class SettingsUtils {
             return;
         }
 
-        if (USB_HOST_ENABLE.equals(prefKey)) {
-            // Write directly to system property, no SharedPreferences
-            UsbHostUtils.applyUsbHostMode(enabled);
-            notifySettingChange(context, prefKey);
-            return;
-        }
 
         PreferenceManager.getDefaultSharedPreferences(context)
                 .edit().putBoolean(prefKey, enabled).commit();
