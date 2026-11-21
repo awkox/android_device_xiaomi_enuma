@@ -40,6 +40,11 @@ public class KeyboardService extends Service implements KeyboardObserver.Keyboar
 
         mObserver.startWatching();
         KeyboardUtils.enableKeyboard(true);
+
+        // The observer only reports from FileObserver MODIFY events, so a
+        // service that starts with the case already attached would never
+        // apply the IME policy until the next event. Apply it now.
+        onKeyboardConnected(KeyboardUtils.isKeyboardConnected());
     }
 
     @Override
