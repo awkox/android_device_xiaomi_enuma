@@ -13,12 +13,30 @@ public class UsbHostUtils {
 
     private static final String TAG = "UsbHostUtils";
     private static final String PROP_USB_HOST = "persist.sys.usb.host.enabled";
+    private static final String MODE_PATH = "/sys/bus/platform/devices/a800000.ssusb/mode";
 
     public static void applyUsbHostMode(boolean enabled) {
         try {
             SystemProperties.set(PROP_USB_HOST, enabled ? "1" : "0");
         } catch (Exception e) {
             Log.e(TAG, "Cannot set USB host property", e);
+        }
+    }
+
+    /**
+     * Reads the dwc3 controller's mode node, which reports peripheral when
+     * VBUS is active, host when ID is grounded and none otherwise. That is
+     * the state init's property triggers act on, so it is what the settings
+     * UI has to show.
+     */
+    public static boolean isHostModeActive() {
+        try (java.io.BufferedReader reader =
+                new java.io.BufferedReader(new java.io.FileReader(MODE_PATH))) {
+            String state = reader.readLine();
+            return state != null && "host".equals(state.trim());
+        } catch (Exception e) {
+            Log.e(TAG, "Cannot read USB mode", e);
+            return false;
         }
     }
 }

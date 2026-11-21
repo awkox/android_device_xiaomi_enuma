@@ -60,11 +60,11 @@ public final class SettingsUtils {
         }
 
         if (USB_HOST_ENABLE.equals(prefKey)) {
-            // Single source of truth: system property
-            // Empty/unset = kernel default = host enabled = true
-            String val = android.os.SystemProperties.get(
-                    "persist.sys.usb.host.enabled", "1");
-            return "1".equals(val);
+            // The dwc3 mode node is the live controller state init acts on.
+            // The property is only the signal the init triggers consume, so
+            // a default there could claim host mode the hardware never
+            // entered.
+            return UsbHostUtils.isHostModeActive();
         }
 
         return PreferenceManager.getDefaultSharedPreferences(context)

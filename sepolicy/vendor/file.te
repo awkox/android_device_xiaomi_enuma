@@ -3,3 +3,6 @@ type sysfs_leds_brightness, fs_type, sysfs_type;
 
 # Xiaomi Keyboard
 type sysfs_keyboard_status, sysfs_type, fs_type;
+
+# USB host mode (dwc3 controller state)
+type sysfs_usb_mode, sysfs_type, fs_type;
