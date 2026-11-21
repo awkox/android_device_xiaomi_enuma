@@ -67,10 +67,6 @@ public class StylusUtils {
         boolean result = false;
         try {
             IPeripherals peripherals = IPeripherals.getService();
-            if (peripherals.isStylusEnabled() == enable) {
-                return true;
-            }
-
             result = peripherals.setStylusEnable(enable);
         } catch (Exception e) {
             if (DEBUG) Log.e(TAG, e.toString());

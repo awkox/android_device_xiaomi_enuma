@@ -56,10 +56,6 @@ public class KeyboardUtils {
         boolean result = false;
         try {
             IPeripherals peripherals = IPeripherals.getService();
-            if (peripherals.isKeyboardEnabled() == enable) {
-                return true;
-            }
-
             result = peripherals.setKeyboardEnable(enable);
         } catch (Exception e) {
             if (DEBUG) Log.e(TAG, e.toString());

@@ -17,11 +17,9 @@ Return<bool> Peripherals::isStylusEnabled() {
 }
 
 Return<bool> Peripherals::setStylusEnable(bool enable) {
-    if (mStylusEnabled == enable) {
-        LOG(INFO) << "Stylus already in desired state.";
-        return true;
-    }
-
+    // No short-circuit on mStylusEnabled: the cache starts false and says
+    // nothing about the hardware after this service restarts, so a request
+    // has to be written through every time.
     int fd = open(TOUCH_DEV_PATH, O_RDWR);
     if (fd < 0) {
         LOG(ERROR) << "Failed to open " << TOUCH_DEV_PATH;
@@ -49,11 +47,7 @@ Return<bool> Peripherals::isKeyboardEnabled() {
 }
 
 Return<bool> Peripherals::setKeyboardEnable(bool enable) {
-    if (mKeyboardEnabled == enable) {
-        LOG(INFO) << "Keyboard already in desired state.";
-        return true;
-    }
-
+    // Same as setStylusEnable: the cache cannot vouch for the hardware.
     std::ofstream file(KEYBOARD_STATUS_PATH);
     if (!file.is_open()) {
         LOG(ERROR) << "Failed to open " << KEYBOARD_STATUS_PATH;
