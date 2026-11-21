@@ -26,6 +26,9 @@
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">小米键盘式双面保护壳</string>
+    <string name="keyboard_enable_title">启用键盘</string>
+    <string name="keyboard_connected">已连接</string>
+    <string name="keyboard_disconnected">未连接</string>
 
     <!-- Button -->
     <string name="button_control_title">耳机线控及手写笔按键</string>
