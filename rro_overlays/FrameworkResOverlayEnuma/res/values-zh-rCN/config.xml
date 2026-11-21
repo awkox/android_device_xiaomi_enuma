@@ -14,11 +14,11 @@
    limitations under the License.
   -->
 
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <!-- SNTP client config: NTP servers to use to obtain an accurate time.
          Items must be in the form: "ntp://<host>[:port]"
          This is not a registered IANA URI scheme. -->
-    <string-array translatable="false" name="config_ntpServers">
+    <string-array name="config_ntpServers" translatable="false">
         <item>ntp://ntp.aliyun.com</item>
     </string-array>
 </resources>

@@ -17,17 +17,17 @@
  */
 -->
 <resources>
-    <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
-    <string name="def_device_name_simple">Xiaomi Pad 5 Pro 5G</string>
-
+    <!-- Comma-separated list of bluetooth, wifi, and cell. -->
     <bool name="def_accelerometer_rotation">true</bool>
 
-    <!-- Set the automatic brightness mode on by default -->
+    <!-- Default screen brightness, from 0 to 255.  102 is 40%. -->
     <bool name="def_screen_brightness_automatic_mode">true</bool>
 
-    <!-- Disable bluetooth by default -->
     <bool name="def_bluetooth_on">false</bool>
 
-    <!-- Disable UI touch sounds by default -->
+    <!-- Default for UI touch sounds enabled -->
     <bool name="def_sound_effects_enabled">false</bool>
+
+    <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
+    <string name="def_device_name_simple">Xiaomi Pad 5 Pro 5G</string>
 </resources>

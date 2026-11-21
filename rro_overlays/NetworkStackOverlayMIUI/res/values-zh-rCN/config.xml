@@ -15,8 +15,9 @@
      limitations under the License.
 -->
 <resources>
+    <!--suppress CheckTagEmptyBody: overlayable resource to use as configuration hook -->
+    <string name="config_captive_portal_http_url" translatable="false">http://connect.rom.miui.com/generate_204</string>
 
-    <string name="config_captive_portal_http_url">http://connect.rom.miui.com/generate_204</string>
-
-    <string name="config_captive_portal_https_url">https://connect.rom.miui.com/generate_204</string>
+    <!--suppress CheckTagEmptyBody: overlayable resource to use as configuration hook -->
+    <string name="config_captive_portal_https_url" translatable="false">https://connect.rom.miui.com/generate_204</string>
 </resources>
