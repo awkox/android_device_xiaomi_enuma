@@ -64,3 +64,7 @@ persist.vendor.fingerprint.powerfps_navigation_vendors=fpc
 
 # Torch
 ro.vendor.camera.legacy_torch_strength_config=0|/sys/class/leds/led:torch_0/max_brightness|150|150|10
+
+# Radio (single SIM; overrides sm8250-common vendor_phone.prop)
+persist.radio.multisim.config=ssss
+ro.telephony.default_network=22
