@@ -27,6 +27,7 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <poll.h>
 #include <sys/inotify.h>
 #include <linux/input.h>
 #include <linux/uinput.h>
@@ -84,11 +85,21 @@ static int try_open_pen(void) {
             continue;
 
         if (is_pen_device(fd)) {
+            if (ioctl(fd, EVIOCGRAB, 1) != 0) {
+                /*
+                 * Without the grab the kernel keeps delivering the pen's raw
+                 * KEY_PAGEUP/PAGEDOWN to the system, so bridging on top of
+                 * it would make every press arrive twice. Skip this node and
+                 * keep scanning: one physical pen can expose several event
+                 * nodes and a later one may still be grabbable.
+                 */
+                ALOGE("EVIOCGRAB failed on %s: %s, trying next node",
+                      path, strerror(errno));
+                close(fd);
+                continue;
+            }
             closedir(dir);
-            int grabbed = ioctl(fd, EVIOCGRAB, 1) == 0;
-            if (!grabbed)
-                ALOGE("EVIOCGRAB failed: %s", strerror(errno));
-            ALOGI("Found pen: %s (%s)", path, grabbed ? "grabbed" : "not grabbed");
+            ALOGI("Found pen: %s (grabbed)", path);
             return fd;
         }
         close(fd);
@@ -118,12 +129,23 @@ static int wait_for_pen(void) {
     }
 
     char buf[512];
+    struct pollfd pfd = { .fd = ifd, .events = POLLIN };
     while (1) {
-        int len = read(ifd, buf, sizeof(buf));
-        if (len <= 0)
+        /* Poll with a timeout: a device that is already present raises no
+         * IN_CREATE, yet its grab may still be failing, so retry either
+         * way instead of blocking until the pen is replugged. */
+        int pr = poll(&pfd, 1, 1000);
+        if (pr < 0) {
+            if (errno == EINTR)
+                continue;
             break;
-
-        usleep(200000);
+        }
+        if (pr > 0) {
+            int len = read(ifd, buf, sizeof(buf));
+            if (len <= 0)
+                break;
+            usleep(200000);
+        }
 
         fd = try_open_pen();
         if (fd >= 0) {
