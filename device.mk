@@ -38,6 +38,9 @@ PRODUCT_PACKAGES += \
     libmegface \
     libpiex_shim
 
+# Fingerprint
+TARGET_SUPPORTS_FINGERPRINT := true
+
 # Parts
 PRODUCT_PACKAGES += \
     MiPadParts
