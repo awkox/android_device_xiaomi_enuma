@@ -9,8 +9,8 @@ TARGET_IS_VAB := true
 # No vibrator motor on elish
 TARGET_DISABLE_VIBRATOR := true
 
-# Is tablet (false because elish has cellular modem)
-TARGET_IS_TABLET := false
+# Is tablet
+TARGET_IS_TABLET := true
 
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tablet_core_hardware.xml
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30

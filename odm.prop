@@ -1,9 +1,5 @@
 # Bluetooth
-bluetooth.device.default_name=Xiaomi Pad 5 Pro 5G
-
-# Radio (single SIM; overrides sm8250-common vendor_phone.prop)
-persist.radio.multisim.config=ssss
-ro.telephony.default_network=22
+bluetooth.device.default_name=Xiaomi Pad 5 Pro
 
 # USB
-vendor.usb.product_string=Xiaomi Pad 5 Pro 5G
+vendor.usb.product_string=Xiaomi Pad 5 Pro

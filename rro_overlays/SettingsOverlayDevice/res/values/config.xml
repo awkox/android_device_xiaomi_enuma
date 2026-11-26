@@ -34,6 +34,9 @@
     -->
     <integer name="config_vibration_supported_intensity_levels">0</integer>
 
+    <!-- Whether to show SIM information in Settings -->
+    <bool name="config_show_sim_info">false</bool>
+
     <!-- Whether or not emergency info tile should display in device info page -->
     <bool name="config_show_emergency_info_in_device_info">false</bool>
 
