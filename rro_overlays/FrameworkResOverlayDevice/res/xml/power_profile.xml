@@ -135,7 +135,7 @@
     <item name="cpu.active">13.47</item>
     <item name="cpu.idle">7.46</item>
     <item name="cpu.suspend">0</item>
-    <item name="battery.capacity">8600</item>
+    <item name="battery.capacity">8720</item>
     <item name="wifi.on">0.22</item>
     <item name="wifi.active">228.29</item>
     <item name="wifi.scan">42.93</item>
