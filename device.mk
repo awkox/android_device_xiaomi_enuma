@@ -6,16 +6,16 @@
 # A/B
 TARGET_IS_VAB := true
 
-# No vibrator motor on enuma
+# No vibrator motor on elish
 TARGET_DISABLE_VIBRATOR := true
 
-# Is tablet (false because enuma has cellular modem)
+# Is tablet (false because elish has cellular modem)
 TARGET_IS_TABLET := false
 
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
 
-# No vibrator motor on enuma
+# No vibrator motor on elish
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/unavailable-features.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavailable-features.xml
 
@@ -43,9 +43,9 @@ PRODUCT_PACKAGES += \
     MiPadParts
 
 PRODUCT_PACKAGES += \
-    vendor.xiaomi_enuma.peripherals@1.0-service.default
+    vendor.xiaomi_elish.peripherals@1.0-service.default
 
-$(call soong_config_set_bool, xiaomi_enuma_peripherals, stylus_use_old_driver, true)
+$(call soong_config_set_bool, xiaomi_elish_peripherals, stylus_use_old_driver, true)
 
 # Stylus button bridge (BLE keyboard -> BTN_STYLUS via uinput)
 PRODUCT_PACKAGES += \
@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.enuma.rc
+    init.elish.rc
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
@@ -80,4 +80,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/enuma/enuma-vendor.mk)
+$(call inherit-product, vendor/xiaomi/elish/elish-vendor.mk)

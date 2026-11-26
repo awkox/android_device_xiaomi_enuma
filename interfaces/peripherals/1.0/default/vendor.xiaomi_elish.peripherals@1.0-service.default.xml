@@ -5,7 +5,7 @@
 
 <manifest version="1.0" type="device">
     <hal format="hidl">
-        <name>vendor.xiaomi_enuma.peripherals</name>
+        <name>vendor.xiaomi_elish.peripherals</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
