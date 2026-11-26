@@ -7,7 +7,13 @@
 # Stylus bridge
 /vendor/bin/stylus-bridge                                               u:object_r:stylus_bridge_exec:s0
 
-# GNSS (Qualcomm - handled by sm8250-common sepolicy)
+# GNSS
+/data/vendor/airoha(/.*)?                                               u:object_r:airoha_data_file:s0
+/dev/airoha_gps                                                         u:object_r:gps_device:s0
+/dev/socket/app_anld(/.*)?                                              u:object_r:anld_socket_file:s0
+/dev/ttyHS1                                                             u:object_r:airoha_mock_gps:s0
+/vendor/bin/hw/airoha\.hardware\.anld                                   u:object_r:airoha_anld_exec:s0
+/vendor/bin/hw/android\.hardware\.gnss@2\.1-service-airoha              u:object_r:airoha_gnss_hal_exec:s0
 
 # MIGT
 /dev/migt                                                               u:object_r:migt_device:s0

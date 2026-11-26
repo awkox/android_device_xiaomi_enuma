@@ -1,3 +1,7 @@
+# GNSS
+type airoha_data_file, file_type, data_file_type;
+type anld_socket_file, file_type;
+
 # Torch
 type sysfs_leds_brightness, fs_type, sysfs_type;
 
